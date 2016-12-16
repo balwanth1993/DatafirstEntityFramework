@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MyApplication1.Models.Department>
+@using MyApplication1.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<h2><b>Department Names</b></h2>
+<ul>
+    @foreach(Department department in Model)
+    {
+        <li>@Html.ActionLink(department.DName,"Index","Home",new { Id = department.ID },null)</li>
+    }
+</ul>
